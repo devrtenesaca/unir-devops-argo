@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: flask-docker
 spec:
+  type: LoadBalancer
+  selector:
+    app: flask-docker
   ports:
   - port: 5000
     targetPort: 5000
-  selector:
-    app: flask-docker
+  
