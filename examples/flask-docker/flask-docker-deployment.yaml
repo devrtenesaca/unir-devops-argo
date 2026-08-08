@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask-docker
 spec:
-  replicas: 2
+  #replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -23,3 +23,10 @@ spec:
           name: flask-docker
           ports:
             - containerPort: 5000
+           resources:
+          requests:
+            cpu: "100m"  # Baseline for HPA
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
