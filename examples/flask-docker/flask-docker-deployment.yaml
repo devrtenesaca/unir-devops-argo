@@ -23,10 +23,10 @@ spec:
           name: flask-docker
           ports:
             - containerPort: 5000
-           resources:
-          requests:
-            cpu: "100m"  # Baseline for HPA
-            memory: "128Mi"
-          limits:
-            cpu: "200m"
-            memory: "256Mi"
+          resources:
+            requests:
+              cpu: "100m"  # Baseline for HPA
+              memory: "128Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
